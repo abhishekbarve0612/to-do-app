@@ -10,10 +10,11 @@ function App() {
     console.log(tasks);
     const parent = e.target.parentElement;
     const count = tasks.length;
+    if (!/\S/.test(parent.children[0].value)) return;
     const temp = [...tasks];
     temp.push({
       "id": count,
-      "task": parent.children[0].value
+      "task": (parent.children[0].value).trim()
     })
     setCount(count + 1);
     setTasks(temp);
