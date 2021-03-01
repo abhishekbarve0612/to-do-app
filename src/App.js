@@ -30,6 +30,7 @@ function App() {
     inputEle.focus()
     editBtn.innerText = "Save";
     } else {
+      if (!/\S/.test(inputEle.value)) return;
       const temp = [...tasks];
       for (const t of temp) {
         if (t.id == val){
